@@ -20,16 +20,17 @@ import android.widget.TextView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.List;
+import java.util.Objects;
 
 public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private View mDialogView;
-    private AnimationSet mModalInAnim;
-    private AnimationSet mModalOutAnim;
-    private Animation mOverlayOutAnim;
-    private Animation mErrorInAnim;
-    private AnimationSet mErrorXInAnim;
-    private AnimationSet mSuccessLayoutAnimSet;
-    private Animation mSuccessBowAnim;
+    private final AnimationSet mModalInAnim;
+    private final AnimationSet mModalOutAnim;
+    private final Animation mOverlayOutAnim;
+    private final Animation mErrorInAnim;
+    private final AnimationSet mErrorXInAnim;
+    private final AnimationSet mSuccessLayoutAnimSet;
+    private final Animation mSuccessBowAnim;
     private TextView mTitleTextView;
     private TextView mContentTextView;
     private String mTitleText;
@@ -81,18 +82,6 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mErrorXInAnim = (AnimationSet)OptAnimationLoader.loadAnimation(getContext(), R.anim.error_x_in);
         // 2.3.x system don't support alpha-animation on layer-list drawable
         // remove it from animation set
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
-            List<Animation> childAnims = mErrorXInAnim.getAnimations();
-            int idx = 0;
-            for (;idx < childAnims.size();idx++) {
-                if (childAnims.get(idx) instanceof AlphaAnimation) {
-                    break;
-                }
-            }
-            if (idx < childAnims.size()) {
-                childAnims.remove(idx);
-            }
-        }
         mSuccessBowAnim = OptAnimationLoader.loadAnimation(getContext(), R.anim.success_bow_roate);
         mSuccessLayoutAnimSet = (AnimationSet)OptAnimationLoader.loadAnimation(getContext(), R.anim.success_mask_layout);
         mModalInAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(), R.anim.modal_in);
@@ -127,7 +116,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mOverlayOutAnim = new Animation() {
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
-                WindowManager.LayoutParams wlp = getWindow().getAttributes();
+                WindowManager.LayoutParams wlp = Objects.requireNonNull(getWindow()).getAttributes();
                 wlp.alpha = 1 - interpolatedTime;
                 getWindow().setAttributes(wlp);
             }
@@ -139,7 +128,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alert_dialog);
 
-        mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
+        mDialogView = Objects.requireNonNull(getWindow()).getDecorView().findViewById(android.R.id.content);
         mTitleTextView = (TextView)findViewById(R.id.title_text);
         mContentTextView = (TextView)findViewById(R.id.content_text);
         mErrorFrame = (FrameLayout)findViewById(R.id.error_frame);

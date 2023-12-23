@@ -1,23 +1,41 @@
-apply plugin: 'com.android.library'
-
-version = VERSION_NAME
-group = GROUP
+plugins {
+    id 'com.android.library'
+}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk 34
+    buildToolsVersion = "34.0.0"  // Use the latest stable build tools version
+
+    namespace "cn.pedant.SweetAlert"
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 21
+        targetSdkVersion 34  // Target the latest stable SDK version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
-    lintOptions {
-        abortOnError false
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Consider using lintOptions with explanations for errors rather than disabling it
 }
 
 dependencies {
-    compile 'com.pnikosis:materialish-progress:1.0'
-}
+    implementation 'com.pnikosis:materialish-progress:1.7'
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+    // Add testing dependencies if needed
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
