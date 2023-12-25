@@ -1,14 +1,12 @@
-package cn.pedant.SweetAlert;
+package cn.pedant.SweetestAlert;
 
 
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.Transformation;
@@ -19,7 +17,6 @@ import android.widget.TextView;
 
 import com.pnikosis.materialishprogress.ProgressWheel;
 
-import java.util.List;
 import java.util.Objects;
 
 public class SweetAlertDialog extends Dialog implements View.OnClickListener {

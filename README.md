@@ -4,14 +4,14 @@ SweetAlert for Android, a beautiful and clever alert dialog
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%20Dialog-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1065)
 
-[中文版](https://github.com/pedant/sweet-alert-dialog/blob/master/README.zh.md)
+[中文版](https://github.com/master/sweet-alert-dialog/blob/master/README.zh.md)
 
 Inspired by JavaScript [SweetAlert](http://tristanedwards.me/sweetalert)
 
-[Demo Download](https://github.com/pedant/sweet-alert-dialog/releases/download/v1.1/sweet-alert-sample-v1.1.apk)
+[Demo Download](https://github.com/master/sweet-alert-dialog/releases/download/v1.1/sweet-alert-sample-v1.1.apk)
 
 ## ScreenShot
-![image](https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif)
+![image](https://github.com/master/sweet-alert-dialog/raw/master/change_type.gif)
 
 ## Setup
 The simplest way to use SweetAlertDialog is to add the library as aar dependency to your build.
@@ -19,9 +19,9 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
 **Maven**
 
     <dependency>
-      <groupId>cn.pedant.sweetalert</groupId>
+      <groupId>cn.pedant.sweetestalert</groupId>
       <artifactId>library</artifactId>
-      <version>1.3</version>
+      <version>1.4</version>
       <type>aar</type>
     </dependency>
 
@@ -32,7 +32,7 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
     }
 
     dependencies {
-        compile 'cn.pedant.sweetalert:library:1.3'
+        implementation 'cn.pedant.sweetestalert:library:1.4'
     }
 
 ## Usage
@@ -45,7 +45,7 @@ show material progress
     pDialog.setCancelable(false);
     pDialog.show();
 
-![image](https://github.com/pedant/sweet-alert-dialog/raw/master/play_progress.gif)
+![image](https://github.com/master/sweet-alert-dialog/raw/master/play_progress.gif)
 
 You can customize progress bar dynamically with materialish-progress methods via **SweetAlertDialog.getProgressHelper()**:
 - resetCount()
@@ -163,8 +163,6 @@ Show the cancel button and bind listener to it：
             }
         })
         .show();
-
-[more android tech shares: pedant.cn](http://www.pedant.cn)
 
 ## License
 

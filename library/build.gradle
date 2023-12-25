@@ -6,12 +6,13 @@ android {
     compileSdk 34
     buildToolsVersion = "34.0.0"  // Use the latest stable build tools version
 
-    namespace "cn.pedant.SweetAlert"
+    namespace "cn.pedant.SweetestAlert"
 
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 34  // Target the latest stable SDK version
-
+        versionName "v1.4"
+        versionCode 5
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
