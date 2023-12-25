@@ -1,26 +1,24 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
+version = VERSION_NAME
+group = GROUP
 
 android {
     compileSdk 34
-    buildToolsVersion = "33.0.1"
-    namespace "cn.pedant.SweetestAlert.sample"
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 34
     }
-
     lintOptions {
         abortOnError false
     }
-
-    buildTypes {
-        release {
-            proguardFile 'proguard-android.txt'
-            minifyEnabled true
-            shrinkResources true
-        }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
     implementation project(':library')

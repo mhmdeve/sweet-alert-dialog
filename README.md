@@ -19,8 +19,8 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
 **Maven**
 
     <dependency>
-      <groupId>cn.pedant.sweetestalert</groupId>
-      <artifactId>library</artifactId>
+      <groupId>com.github.mhmdeve</groupId>
+      <artifactId>sweet-alert-dialog</artifactId>
       <version>1.4</version>
       <type>aar</type>
     </dependency>
@@ -32,7 +32,7 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
     }
 
     dependencies {
-        implementation 'cn.pedant.sweetestalert:library:1.4'
+        implementation 'com.github.mhmdeve:sweet-alert-dialog:1.4'
     }
 
 ## Usage

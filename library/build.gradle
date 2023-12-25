@@ -1,42 +1,41 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
+
+version = VERSION_NAME
+group = GROUP
 
 android {
     compileSdk 34
-    buildToolsVersion = "34.0.0"  // Use the latest stable build tools version
-
-    namespace "cn.pedant.SweetestAlert"
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 34  // Target the latest stable SDK version
-        versionName "v1.4"
-        versionCode 5
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+        minSdkVersion 9
+        targetSdkVersion 34
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+    lintOptions {
+        abortOnError false
     }
-
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    // Consider using lintOptions with explanations for errors rather than disabling it
 }
 
 dependencies {
     implementation 'com.pnikosis:materialish-progress:1.7'
+}
 
-    // Add testing dependencies if needed
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = "cn.pedant.sweetestalert"
+                artifactId = "sweet-alert-dialog"
+                version = "1.4"
+            }
+        }
+    }
 }
