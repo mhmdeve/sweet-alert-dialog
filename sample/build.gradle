@@ -6,16 +6,19 @@ group = GROUP
 
 android {
     compileSdk 34
+    buildToolsVersion = "34.0.0"
+    namespace "cn.pedant.SweetestAlert.sample"
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 34
     }
-    lintOptions {
-        abortOnError false
-    }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    namespace 'cn.pedant.SweetestAlert.sample'
+    lint {
+        abortOnError false
     }
 }
 

@@ -29,7 +29,7 @@
             android:textSize="14sp"
             android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_centerHorizontal="true"
             android:layout_below="@id/txt_0"
             android:id="@+id/progress_dialog"
@@ -48,7 +48,7 @@
             android:textSize="14sp"
             android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_centerHorizontal="true"
             android:layout_below="@id/txt_1"
             android:id="@+id/basic_test"
@@ -68,7 +68,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_2"
                 android:id="@+id/under_text_test"
@@ -88,7 +88,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_3"
                 android:id="@+id/error_text_test"
@@ -108,7 +108,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_4"
                 android:id="@+id/success_text_test"
@@ -129,7 +129,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_5"
                 android:id="@+id/warning_confirm_test"
@@ -149,7 +149,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_6"
                 android:id="@+id/warning_cancel_test"
@@ -169,7 +169,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="#797979"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/txt_7"
                 android:id="@+id/custom_img_test"

@@ -43,7 +43,7 @@ public class SuccessTickView extends View {
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(@androidx.annotation.NonNull Canvas canvas) {
         super.draw(canvas);
         int totalW = getWidth();
         int totalH = getHeight();
@@ -58,14 +58,12 @@ public class SuccessTickView extends View {
         if (mLeftRectGrowMode) {
             leftRect.left = 0;
             leftRect.right = leftRect.left + mLeftRectWidth;
-            leftRect.top = (totalH + CONST_RIGHT_RECT_W) / 2;
-            leftRect.bottom = leftRect.top + CONST_RECT_WEIGHT;
         } else {
             leftRect.right = (totalW + CONST_LEFT_RECT_W) / 2 + CONST_RECT_WEIGHT - 1;
             leftRect.left = leftRect.right - mLeftRectWidth;
-            leftRect.top = (totalH + CONST_RIGHT_RECT_W) / 2;
-            leftRect.bottom = leftRect.top + CONST_RECT_WEIGHT;
         }
+        leftRect.top = (totalH + CONST_RIGHT_RECT_W) / 2;
+        leftRect.bottom = leftRect.top + CONST_RECT_WEIGHT;
 
         canvas.drawRoundRect(leftRect, CONST_RADIUS, CONST_RADIUS, mPaint);
 

@@ -21,7 +21,7 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
     <dependency>
       <groupId>com.github.mhmdeve</groupId>
       <artifactId>sweet-alert-dialog</artifactId>
-      <version>1.4</version>
+      <version>1.5</version>
       <type>aar</type>
     </dependency>
 
@@ -32,7 +32,7 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
     }
 
     dependencies {
-        implementation 'com.github.mhmdeve:sweet-alert-dialog:1.4'
+        implementation 'com.github.mhmdeve:sweet-alert-dialog:1.5'
     }
 
 ## Usage
@@ -134,7 +134,7 @@ Show the cancel button and bind listener to it：
     new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
         .setTitleText("Are you sure?")
         .setContentText("Won't be able to recover this file!")
-        .setCancelText("No,cancel plx!")
+        .setCancelText("Cancel")
         .setConfirmText("Yes,delete it!")
         .showCancelButton(true)
         .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {

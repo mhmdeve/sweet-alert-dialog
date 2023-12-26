@@ -66,7 +66,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Are you sure?")
                     .setContentText("Won't be able to recover this file!")
-                    .setCancelText("No,cancel plx!")
+                    .setCancelText("Cancel")
                     .setConfirmText("Yes,delete it!")
                     .showCancelButton(true)
                     .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {

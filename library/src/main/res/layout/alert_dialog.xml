@@ -66,7 +66,8 @@
             android:layout_height="60dp"
             android:layout_marginStart="-3dp"
             android:layout_gravity="start"
-            android:background="@android:color/white" />
+            android:background="@android:color/white"
+            android:layout_marginLeft="-3dp" />
 
         <View
             android:layout_width="match_parent"
@@ -144,15 +145,21 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cancel_button"
             style="@style/dialog_blue_button"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
             android:background="@drawable/gray_button_background"
             android:layout_marginEnd="10dp"
             android:visibility="gone"
-            android:text="@string/dialog_cancel" />
+            android:text="@string/dialog_cancel"
+            android:layout_marginRight="10dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
             android:id="@+id/confirm_button"
             style="@style/dialog_blue_button"
             android:text="@string/dialog_ok" />

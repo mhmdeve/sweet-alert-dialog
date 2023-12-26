@@ -8,33 +8,36 @@ group = GROUP
 
 android {
     compileSdk 34
-
+    buildToolsVersion = "34.0.0"
+    namespace "cn.pedant.SweetestAlert"
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 34
     }
 
-    lintOptions {
-        abortOnError false
-    }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    namespace 'cn.pedant.SweetestAlert'
+    lint {
+        abortOnError false
     }
 }
 
 dependencies {
     implementation 'com.pnikosis:materialish-progress:1.7'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
 
 afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.release
-                groupId = "cn.pedant.sweetestalert"
+                artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+                groupId = group
                 artifactId = "sweet-alert-dialog"
-                version = "1.4"
+                version = version
             }
         }
     }
